@@ -29,7 +29,7 @@ class Scraper
       end
       student_index_array
     end
-
+binding.pry
 
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url)) #uses open uri module
@@ -51,7 +51,7 @@ class Scraper
     end
     scraped_student[:profile_quote] = doc.css(".profile-quote").text
     scraped_student[:bio] = doc.css(".description-holder").css("p").text
-    
+
     scraped_student
   end
 end
